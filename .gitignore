@@ -1,4 +1,4 @@
-/example/ClassAndObject/.classpath
-/example/ClassAndObject/.project
-/example/ClassAndObject/bin
-/example/ClassAndObject/.settings
+.classpath
+.project
+.settings
+*.class
