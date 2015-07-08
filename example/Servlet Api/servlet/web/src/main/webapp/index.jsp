@@ -50,9 +50,9 @@
 		</form>
 	</fieldset>
 
-	<jsp:include page="/include/forward.jsp"></jsp:include>
+	<jsp:include page="/include/forward.jsp" ></jsp:include>
 
-	<%@ include file="/include/redirect.jsp"%>
+	<%@ include file="/include/redirect.jsp" %>
 
 	<ul>
 		<li><a href="example.jsp">example.jsp</a></li>

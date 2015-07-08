@@ -14,6 +14,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<c:import url="/include/includeWithParam.jsp" var="jspPage"
 		scope="page">
 		<c:param value="Hello" name="message"></c:param>
