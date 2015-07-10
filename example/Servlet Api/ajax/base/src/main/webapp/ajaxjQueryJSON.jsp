@@ -25,6 +25,7 @@
 					$("#result").html(JSON.stringify(data));
 
 					$.each(data, function(i, val) {
+						
 						console.log(val);
 
 						var d = new Date(val.age);

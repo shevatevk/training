@@ -14,30 +14,30 @@
 		<Set name="headerCacheSize">512</Set>
 	</New>
 
-<!-- 	<Call name="addBean"> -->
-<!-- 		<Arg> -->
-<!-- 			<New class="org.eclipse.jetty.security.HashLoginService"> -->
-<!-- 				<Set name="name">CustomRrealm</Set> -->
-<!-- 				<Set name="config"> -->
-<!-- 					src/main/resources/realm.properties -->
-<!-- 				</Set> -->
-<!-- 				<Set name="refreshInterval">0</Set> -->
-<!-- 			</New> -->
-<!-- 		</Arg> -->
-<!-- 	</Call> -->
-
 	<Call name="addBean">
 		<Arg>
-			<New class="org.eclipse.jetty.jaas.JAASLoginService">
-				<Set name="Name">CustomRealm</Set>
-				<Set name="LoginModuleName">CustomLoginModule</Set>
-				<Set name="roleClassNames">
-					<Array type="java.lang.String">
-						<Item>org.eclipse.jetty.jaas.JAASRole</Item> 
-						<Item>hu.neuron.java.login.RolePrincipal</Item>
-					</Array>
+			<New class="org.eclipse.jetty.security.HashLoginService">
+				<Set name="name">CustomRrealm</Set>
+				<Set name="config">
+					src/main/resources/realm.properties
 				</Set>
+				<Set name="refreshInterval">0</Set>
 			</New>
 		</Arg>
 	</Call>
+
+<!-- 	<Call name="addBean"> -->
+<!-- 		<Arg> -->
+<!-- 			<New class="org.eclipse.jetty.jaas.JAASLoginService"> -->
+<!-- 				<Set name="Name">CustomRealm</Set> -->
+<!-- 				<Set name="LoginModuleName">CustomLoginModule</Set> -->
+<!-- 				<Set name="roleClassNames"> -->
+<!-- 					<Array type="java.lang.String"> -->
+<!-- 						<Item>org.eclipse.jetty.jaas.JAASRole</Item>  -->
+<!-- 						<Item>hu.neuron.java.login.RolePrincipal</Item> -->
+<!-- 					</Array> -->
+<!-- 				</Set> -->
+<!-- 			</New> -->
+<!-- 		</Arg> -->
+<!-- 	</Call> -->
 </Configure>

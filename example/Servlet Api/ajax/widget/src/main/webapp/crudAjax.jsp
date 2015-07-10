@@ -97,6 +97,7 @@ select {
 				});
 
 				$("#add").click(function(event) {
+					
 					$("#dialog").dialog(
 							"option",
 							"buttons",
