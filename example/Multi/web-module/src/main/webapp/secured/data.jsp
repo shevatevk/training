@@ -39,7 +39,7 @@
 			},
 			close : function() {
 				
-				allFields.removeClass("ui-state-error");
+			
 			}
 		});
 
@@ -48,7 +48,7 @@
 		});
 		function addData() {
 			$.ajax({
-				url : 'DataServlet',
+				url : '<c:url value="/DataServlet"/>',
 				data : {
 					op : 'add',
 					data1 : $('#data1').val(),
@@ -64,8 +64,8 @@
 		}
 
 		$('#example').dataTable({
-			"ajax" : "<c:url value="/DataServlet?op=get"/>",
-			"columns" : [ {
+			"ajax" : '<c:url value="/DataServlet?op=get"/>',
+			"columns" : [ { 
 				"data" : "data1"
 			}, {
 				"data" : "data2"

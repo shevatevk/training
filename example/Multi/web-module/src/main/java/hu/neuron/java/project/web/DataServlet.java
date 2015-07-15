@@ -22,7 +22,7 @@ import com.google.gson.Gson;
  * Servlet implementation class DataServlet
  */
 @WebServlet("/DataServlet")
-@ServletSecurity(value = @HttpConstraint(rolesAllowed = "user"))
+
 public class DataServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -58,11 +58,9 @@ public class DataServlet extends HttpServlet {
 		if (op != null && op.equals("add")) {
 			DataBVO dataVO = new DataBVO(null, data1, data2, data3);
 			businessO.save(dataVO);
-			System.out.println(dataVO);
 		} else if (op != null && op.equals("get")) {
 			DataTableResponseWebVo dataTableResponseWebVo = new DataTableResponseWebVo();
 			Set<DataBVO> data = businessO.findAll();
-			System.out.println(data);
 			dataTableResponseWebVo.setData(new ArrayList<>(data));
 			Gson gson = new Gson();
 			gson.toJson(dataTableResponseWebVo, response.getWriter());
