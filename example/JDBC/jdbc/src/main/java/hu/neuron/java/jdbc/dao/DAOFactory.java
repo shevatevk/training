@@ -10,6 +10,7 @@ import java.sql.SQLException;
 public class DAOFactory {
 	private Connection connection;
 	private boolean scopeMarked = false;
+	private RegistrationDAOImpl registrationDAOImpl;
 
 	private DAOFactory() {
 	}
@@ -21,7 +22,10 @@ public class DAOFactory {
 	public RegistrationDAO getRegistrationDAO() throws Exception {
 		if (connection == null)
 			throw new Exception();
-		return new RegistrationDAOImpl(connection);
+		if (registrationDAOImpl == null) {
+			registrationDAOImpl = new RegistrationDAOImpl(connection);
+		}
+		return registrationDAOImpl;
 	}
 
 	public void beginConnectionScope() throws Exception {
@@ -31,8 +35,7 @@ public class DAOFactory {
 			throw new Exception("The beginning of scope is already marked.");
 		} else {
 			try {
-				connection = PoolingDataSourceExample.getDataSource()
-						.getConnection();
+				connection = ConnectionFactory.getConnection();
 			} catch (Exception e) {
 				scopeMarked = false;
 				throw new Exception(e);

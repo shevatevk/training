@@ -1,13 +1,13 @@
 package hu.neuron.java.jdbc;
 
-import java.util.Date;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import hu.neuron.java.jdbc.dao.DAOFactory;
 import hu.neuron.java.jdbc.dao.RegistrationDAO;
 import hu.neuron.java.jdbc.dto.RegistrationDTO;
+
+import java.util.Date;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import junit.framework.TestCase;
 
 public class DAOTest extends TestCase {
@@ -26,12 +26,13 @@ public class DAOTest extends TestCase {
 
 				dto.setId(id);
 
-				dao.delete(id);
+//				dao.delete(id);
 
 				dto.setFirstName("C");
-				if (true) {
-					throw new RuntimeException();
-				}
+				
+//				if (true) {
+//					throw new RuntimeException();
+//				}
 
 				dao.update(dto);
 
@@ -49,7 +50,7 @@ public class DAOTest extends TestCase {
 				e.printStackTrace();
 			}
 		}
-
+		
 	}
 
 	public void testDAOSelect() {

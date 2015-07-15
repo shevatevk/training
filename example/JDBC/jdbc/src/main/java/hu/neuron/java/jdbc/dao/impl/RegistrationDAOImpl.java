@@ -70,7 +70,7 @@ public class RegistrationDAOImpl implements RegistrationDAO {
 			statement.setInt(3, dto.getAge());
 			statement.setLong(4, dto.getId());
 			int i = statement.executeUpdate();
-
+			System.out.println("executeUpdate: " + i);
 		} catch (Exception e) {
 			throw new Exception();
 		} finally {
