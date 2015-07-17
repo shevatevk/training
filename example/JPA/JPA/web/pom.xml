@@ -5,10 +5,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>hu.neuron.java</groupId>
-		<artifactId>spring-example</artifactId>
+		<artifactId>spring-jpa-example</artifactId>
 		<version>1.0</version>
 	</parent>
-	<groupId>hu.neuron.java.web</groupId>
+	<groupId>web</groupId>
 	<artifactId>web</artifactId>
 	<packaging>war</packaging>
 	<name>web Maven Webapp</name>
@@ -16,16 +16,18 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>hu.neuron.java.core</groupId>
-			<artifactId>core</artifactId>
+			<groupId>hu.neuron.java</groupId>
+			<artifactId>service</artifactId>
 			<version>${version}</version>
 		</dependency>
 
+
 		<dependency>
-			<groupId>hu.neuron.java.common</groupId>
-			<artifactId>client-api</artifactId>
+			<groupId>hu.neuron.java</groupId>
+			<artifactId>service-client-api</artifactId>
 			<version>${version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -38,15 +40,10 @@
 		</dependency>
 
 		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
+			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
 		</dependency>
 
-
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-security</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -86,23 +83,15 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+
 
 	</dependencies>
 	<build>
 		<finalName>WebApp</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.2.7.v20150116</version>
-				<configuration>
-					<scanIntervalSeconds>1</scanIntervalSeconds>
-					<webApp>
-						<contextPath>/WebApp</contextPath>
-					</webApp>
 
-				</configuration>
-			</plugin>
-		</plugins>
 	</build>
 </project>
