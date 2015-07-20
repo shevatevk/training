@@ -24,7 +24,7 @@
 
 		<dependency>
 			<groupId>hu.neuron.java</groupId>
-			<artifactId>core</artifactId>
+			<artifactId>core-spring-data</artifactId>
 			<version>${version}</version>
 		</dependency>
 

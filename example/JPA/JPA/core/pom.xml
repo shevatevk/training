@@ -19,7 +19,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>hu.neuron.java.common</groupId>
+			<groupId>hu.neuron.java</groupId>
 			<artifactId>core-client-api</artifactId>
 			<version>${version}</version>
 		</dependency>
