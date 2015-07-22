@@ -82,7 +82,6 @@
             <p:growl id="msgs" showDetail="true" />
             <p:dataTable id="userTable" var="currentUser"
                          value="#{adminBean.userModel}" selectionMode="single"
-                     
                          paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
                          rowsPerPageTemplate="5,10,15" lazy="true" paginator="true" rows="10"
                          selection="#{adminController.selectedUser}" 
@@ -90,6 +89,7 @@
 
                 <p:ajax event="rowSelect" listener="#{adminController.onRowSelect}" 
                         update=":adminForm:msgs,:adminCommandsForm,:updateUserDialog" /> 
+                        
                 <p:ajax event="rowUnselect" 
                         listener="#{adminController.onRowUnselect}" 
                         update=":adminForm:msgs,:adminCommandsForm,:updateUserDialog" /> 

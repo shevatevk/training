@@ -48,14 +48,15 @@ public class UserConverter {
 		dto.setId(vo.getId());
 		dto.setPassword(vo.getPassword());
 		dto.setUserName(vo.getUserName());
-		
-		ArrayList<Role> vos = new ArrayList<Role>();
 
-		for (RoleVO role : vo.getRoles()) {
-			vos.add(RoleConverter.toEntity(role));
+		if (vo.getRoles() != null) {
+			ArrayList<Role> vos = new ArrayList<Role>();
+			for (RoleVO role : vo.getRoles()) {
+				vos.add(RoleConverter.toEntity(role));
+			}
+
+			dto.setRoles(vos);
 		}
-
-		dto.setRoles(vos);
 		return dto;
 	}
 
