@@ -53,11 +53,14 @@ public class FamilyRepositoryTest {
 		Person e = new Person();
 		e.setFirstName("a");
 		e.setLastName("b");
+		
 		e.setFamily(family);
 
 		Job job = new Job();
 		job.setJobDescr("job");
 		job.setSalery(20.2);
+		
+		
 		e.setJob(job);
 		members.add(e);
 

@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
 
 @Entity
 public class Person extends BaseEntity {
@@ -19,7 +20,7 @@ public class Person extends BaseEntity {
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Job job;
-
+	
 	public String getFirstName() {
 		return firstName;
 	}

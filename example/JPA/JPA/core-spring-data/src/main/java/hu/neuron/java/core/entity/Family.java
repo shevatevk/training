@@ -14,8 +14,8 @@ public class Family extends BaseEntity {
 	private static final long serialVersionUID = 1056773191597068617L;
 
 	private String description;
-//
-//	@OneToMany(mappedBy = "family", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+
+//	@OneToMany(mappedBy = "family", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //	private List<Person> members = new ArrayList<Person>();
 
 	public String getDescription() {
@@ -36,8 +36,8 @@ public class Family extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "Family [description=" + description 
-//				+ ", members=" + members
+		return "Family [description=" + description
+		// + ", members=" + members
 				+ "]";
 	}
 
