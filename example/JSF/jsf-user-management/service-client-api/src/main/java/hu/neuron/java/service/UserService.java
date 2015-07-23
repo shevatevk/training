@@ -23,4 +23,15 @@ public interface UserService {
 	public RoleVO getRoleByName(String role);
 
 	public void saveUser(UserVO selectedUser);
+
+	public void saveRole(RoleVO roleVO);
+
+	public void updateRole(RoleVO roleVO);
+
+	public void removeRole(RoleVO roleVO);
+
+	public List<RoleVO> getRoles(int i, int pageSize, String sortField,
+			int dir, String filter, String filterColumnName);
+
+	public int getRoleCount();
 }

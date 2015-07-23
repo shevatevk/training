@@ -21,7 +21,7 @@
 	</h:head>
 
 	<h:body>
-		<p:growl id="growl" showDetail="true" />
+		<p:growl id="growl" showDetail="true" autoUpdate="true" />
 		<ui:include src="/includes/loginContent.xhtml"></ui:include>
 		<p:menubar>
 
@@ -29,6 +29,8 @@
 				icon="ui-icon-locked" />
 			<p:submenu label="Admin" icon="ui-icon-gear">
 				<p:menuitem value="Users" url="/secured/users.xhtml"
+					icon="fa fa-user" />
+				<p:menuitem value="Role" url="/secured/roles.xhtml"
 					icon="fa fa-user" />
 			</p:submenu>
 			<f:facet name="options">

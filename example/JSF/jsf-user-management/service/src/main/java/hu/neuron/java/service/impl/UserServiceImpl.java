@@ -10,6 +10,7 @@ import hu.neuron.java.service.converter.UserConverter;
 import hu.neuron.java.service.vo.RoleVO;
 import hu.neuron.java.service.vo.UserVO;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service("userService")
 @Transactional(propagation = Propagation.REQUIRED)
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, Serializable {
+
+	private static final long serialVersionUID = 7081140322696230547L;
+
 	@Autowired
 	UserDao userDao;
 
@@ -82,7 +86,7 @@ public class UserServiceImpl implements UserService {
 			List<User> contents = entities.getContent();
 			for (User m : contents) {
 				ret.add(UserConverter.toVO(m));
-			
+
 			}
 		}
 		return ret;
@@ -114,9 +118,54 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void saveUser(UserVO selectedUser) {
-		
+
 		userDao.save(UserConverter.toEntity(selectedUser));
 
+	}
+
+	@Override
+	public void saveRole(RoleVO roleVO) {
+		roleDao.save(RoleConverter.toEntity(roleVO));
+	}
+
+	@Override
+	public void updateRole(RoleVO roleVO) {
+		roleDao.save(RoleConverter.toEntity(roleVO));
+
+	}
+
+	@Override
+	public void removeRole(RoleVO roleVO) {
+		roleDao.delete(roleVO.getId());
+
+	}
+
+	@Override
+	public List<RoleVO> getRoles(int page, int size, String sortField,
+			int sortOrder, String filter, String filterColumnName) {
+
+		Direction dir = sortOrder == 1 ? Sort.Direction.ASC
+				: Sort.Direction.DESC;
+		PageRequest pageRequest = new PageRequest(page, size, new Sort(
+				new org.springframework.data.domain.Sort.Order(dir, sortField)));
+		Page<Role> entities;
+
+		if (filter.length() != 0 && filterColumnName.equals("name")) {
+			entities = roleDao.findByNameStartsWith(filter, pageRequest);
+		} else {
+			entities = roleDao.findAll(pageRequest);
+		}
+
+		List<RoleVO> ret = RoleConverter.toVO(entities.getContent());
+
+		return ret;
+
+	}
+
+	@Override
+	public int getRoleCount() {
+
+		return (int) roleDao.count();
 	}
 
 }
