@@ -1,13 +1,13 @@
 package hu.neuron.java.web.controllers.admin;
 
 import hu.neuron.java.service.UserServiceLocal;
+import hu.neuron.java.service.facade.UserFacadeLocal;
 
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 @ViewScoped
@@ -18,12 +18,12 @@ public class AdminBean implements Serializable {
 
 	private LazyUserModel userModel;
 
-	@EJB(name = "UserService")
-	private UserServiceLocal userService;
+	@EJB(beanName = "UserFacade")
+	private UserFacadeLocal userFacade;
 
 	@PostConstruct
 	public void init() {
-		userModel = new LazyUserModel(getUserService());
+		userModel = new LazyUserModel(getUserFacade());
 	}
 
 	public LazyUserModel getUserModel() {
@@ -34,12 +34,12 @@ public class AdminBean implements Serializable {
 		this.userModel = userModel;
 	}
 
-	public UserServiceLocal getUserService() {
-		return userService;
+	public UserFacadeLocal getUserFacade() {
+		return userFacade;
 	}
 
-	public void setUserService(UserServiceLocal userService) {
-		this.userService = userService;
+	public void setUserFacade(UserFacadeLocal userFacade) {
+		this.userFacade = userFacade;
 	}
 
 }

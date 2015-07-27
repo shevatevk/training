@@ -1,6 +1,8 @@
 package hu.neuron.java.web.controllers.admin;
 
+import hu.neuron.java.service.RoleServiceLocal;
 import hu.neuron.java.service.UserServiceLocal;
+import hu.neuron.java.service.facade.UserFacadeLocal;
 import hu.neuron.java.service.vo.RoleVO;
 import hu.neuron.java.service.vo.UserVO;
 
@@ -31,8 +33,8 @@ public class AdminController implements Serializable {
 
 	/** The manage user facade service. */
 
-	@EJB(name = "UserService")
-	private UserServiceLocal userService;
+	@EJB(beanName = "UserFacade")
+	private UserFacadeLocal userFacade;
 
 	/** The role. */
 	private String role;
@@ -56,7 +58,7 @@ public class AdminController implements Serializable {
 	public List<String> completeText(String query) {
 		List<String> results = new ArrayList<String>();
 		List<RoleVO> roles = new ArrayList<RoleVO>();
-		roles = getUserService().getRoles();
+		roles = getUserFacade().getRoles();
 		for (RoleVO role : roles) {
 			if (role.getName().toLowerCase().contains(query.toLowerCase())) {
 				results.add(role.getName());
@@ -85,7 +87,7 @@ public class AdminController implements Serializable {
 	 * Adds the role to user.
 	 */
 	public void addRoleToUser() {
-		userRoles.add(getUserService().getRoleByName(role));
+		userRoles.add(getUserFacade().getRoleByName(role));
 	}
 
 	/**
@@ -93,7 +95,7 @@ public class AdminController implements Serializable {
 	 */
 	public void updateUser() {
 		selectedUser.setRoles(new ArrayList<>(userRoles));
-		getUserService().saveUser(selectedUser);
+		getUserFacade().saveUser(selectedUser);
 	}
 
 	/**
@@ -232,14 +234,12 @@ public class AdminController implements Serializable {
 		userRoles.remove(selectedRole);
 	}
 
-	public UserServiceLocal getUserService() {
-		return userService;
+	public UserFacadeLocal getUserFacade() {
+		return userFacade;
 	}
 
-	public void setUserService(UserServiceLocal userService) {
-		this.userService = userService;
+	public void setUserFacade(UserFacadeLocal userFacade) {
+		this.userFacade = userFacade;
 	}
-
-	
 
 }

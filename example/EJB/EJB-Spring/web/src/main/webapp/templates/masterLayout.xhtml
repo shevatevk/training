@@ -27,12 +27,16 @@
 
 			<p:menuitem value="Secured" url="/secured/secured.xhtml"
 				icon="ui-icon-locked" />
+
+			<p:menuitem value="Demo" url="/secured/demo.xhtml" />
+
 			<p:submenu label="Admin" icon="ui-icon-gear">
 				<p:menuitem value="Users" url="/secured/users.xhtml"
 					icon="fa fa-user" />
 				<p:menuitem value="Role" url="/secured/roles.xhtml"
 					icon="fa fa-user" />
 			</p:submenu>
+
 			<f:facet name="options">
 
 				<c:choose>
@@ -48,7 +52,7 @@
 			</f:facet>
 
 		</p:menubar>
-
+		
 
 		<div id="contentDiv">
 			<div class="ui-wrap-content" style="height: 100%;">

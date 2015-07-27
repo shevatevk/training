@@ -60,6 +60,12 @@
 	</ejb-local-ref>
 
 
+	<persistence-context-ref>
+    <persistence-context-ref-name>EntityManagerJNDI</persistence-context-ref-name>
+    <persistence-unit-name>hu.neuron.java.jpa</persistence-unit-name>
+    <persistence-context-type>Transaction</persistence-context-type>
+</persistence-context-ref>
+ 
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>

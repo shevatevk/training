@@ -53,6 +53,7 @@
 							<groupId>hu.neuron.java</groupId>
 							<artifactId>core</artifactId>
 						</ejbModule>
+						
 					</modules>
 				</configuration>
 			</plugin>

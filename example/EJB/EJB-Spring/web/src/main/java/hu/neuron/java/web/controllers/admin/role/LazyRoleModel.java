@@ -1,6 +1,7 @@
 package hu.neuron.java.web.controllers.admin.role;
 
 import hu.neuron.java.service.UserServiceLocal;
+import hu.neuron.java.service.facade.UserFacadeLocal;
 import hu.neuron.java.service.vo.RoleVO;
 
 import java.util.List;
@@ -13,9 +14,9 @@ public class LazyRoleModel extends LazyDataModel<RoleVO> {
 
 	private List<RoleVO> visibleRoleList;
 
-	private UserServiceLocal userService;
+	private UserFacadeLocal userService;
 
-	public LazyRoleModel(UserServiceLocal userService) {
+	public LazyRoleModel(UserFacadeLocal userService) {
 		super();
 		this.userService = userService;
 	}
@@ -66,11 +67,11 @@ public class LazyRoleModel extends LazyDataModel<RoleVO> {
 
 	}
 
-	public UserServiceLocal getUserService() {
+	public UserFacadeLocal getUserService() {
 		return userService;
 	}
 
-	public void setUserService(UserServiceLocal userService) {
+	public void setUserService(UserFacadeLocal userService) {
 		this.userService = userService;
 	}
 }

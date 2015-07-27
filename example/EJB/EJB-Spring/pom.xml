@@ -35,7 +35,8 @@
 	<modules>
 		<module>web</module>
 		<module>core</module>
-
+		<module>service2</module>
+		<module>service-client-api2</module>
 		<module>service</module>
 		<module>service-client-api</module>
 		<module>ear</module>

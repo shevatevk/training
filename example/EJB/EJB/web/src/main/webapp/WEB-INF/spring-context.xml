@@ -14,7 +14,9 @@
 
 
 	<import resource="classpath:spring-security.xml" />
-	<jee:local-slsb id="UserFacade" jndi-name="java:global/ear/service-1.0/UserFacade!hu.neuron.java.service.facade.UserFacadeLocal"
+
+	<jee:local-slsb id="UserFacade"
+		jndi-name="java:global/ear/service-1.0/UserFacade!hu.neuron.java.service.facade.UserFacadeLocal"
 		business-interface="hu.neuron.java.service.facade.UserFacadeLocal" />
 
 

@@ -5,21 +5,27 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0">
 	<persistence-unit name="hu.neuron.java.jpa"
-		transaction-type="RESOURCE_LOCAL">
+		transaction-type="JTA">
+
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>hu.neuron.JpaDataSource</jta-data-source>
-		<class>hu.neuron.java.core.entity.BaseEntity</class> 
+		<class>hu.neuron.java.core.entity.BaseEntity</class>
 		<class>hu.neuron.java.core.entity.Role</class>
 		<class>hu.neuron.java.core.entity.User</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 
 			<property name="hibernate.archive.autodetection" value="class, hbm" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.show_sql" value="true" />
-			
-			<property name="hibernate.hbm2ddl.auto" value="create" />
- 
+			<property name="hibernate.transaction.jta.platform"
+				value="org.hibernate.service.jta.platform.internal.WeblogicJtaPlatform" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+			<property name="hibernate.session_factory_name" value="SessionFactoryJNDI" />
+			<property name="hibernate.ejb.entitymanager_factory_name"
+				value="EntityManagerJNDI" />
+
 		</properties>
 	</persistence-unit>
 </persistence>

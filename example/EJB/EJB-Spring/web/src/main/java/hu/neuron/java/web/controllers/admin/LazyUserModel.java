@@ -1,6 +1,6 @@
 package hu.neuron.java.web.controllers.admin;
 
-import hu.neuron.java.service.UserServiceLocal;
+import hu.neuron.java.service.facade.UserFacadeLocal;
 import hu.neuron.java.service.vo.UserVO;
 
 import java.util.List;
@@ -13,10 +13,10 @@ public class LazyUserModel extends LazyDataModel<UserVO> {
 
 	private static final long serialVersionUID = 1L;
 
-	private UserServiceLocal userService = null;
+	private UserFacadeLocal userService = null;
 	private List<UserVO> visibleUserList;
 
-	public LazyUserModel(UserServiceLocal userService) {
+	public LazyUserModel(UserFacadeLocal userService) {
 		this.userService = userService;
 
 	}

@@ -1,6 +1,7 @@
 package hu.neuron.java.web.controllers.admin.role;
 
 import hu.neuron.java.service.UserServiceLocal;
+import hu.neuron.java.service.facade.UserFacadeLocal;
 import hu.neuron.java.service.vo.RoleVO;
 
 import java.io.Serializable;
@@ -26,9 +27,8 @@ public class RoleController implements Serializable {
 
 	private String updateRoleName;
 
-
-	@EJB(name = "UserService")
-	private UserServiceLocal userService;
+	@EJB(beanName = "UserFacade")
+	UserFacadeLocal userFacade;
 
 	private LazyRoleModel lazyRoleModel;
 
@@ -104,8 +104,6 @@ public class RoleController implements Serializable {
 		this.selectedRole = selectedRole;
 	}
 
-	
-
 	public String getNewRoleName() {
 		return newRoleName;
 	}
@@ -122,11 +120,11 @@ public class RoleController implements Serializable {
 		this.updateRoleName = updateRoleName;
 	}
 
-	public UserServiceLocal getUserService() {
-		return userService;
+	public UserFacadeLocal getUserService() {
+		return userFacade;
 	}
 
-	public void setUserService(UserServiceLocal userService) {
-		this.userService = userService;
+	public void setUserService(UserFacadeLocal userService) {
+		this.userFacade = userService;
 	}
 }
