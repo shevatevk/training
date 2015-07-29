@@ -23,6 +23,7 @@ public class MessageSender implements MessageSenderRemote {
 
 	@Resource(name = "hu.neuron.java.ConnectionFactory")
 	private ConnectionFactory connectionFactory;
+
 	@Resource(name = "hu.neuron.java.QueueA")
 	private Queue queue;
 

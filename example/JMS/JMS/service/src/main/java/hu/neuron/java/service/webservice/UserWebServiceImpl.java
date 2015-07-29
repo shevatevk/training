@@ -31,12 +31,14 @@ public class UserWebServiceImpl implements UserWebService {
 	Mapper mapper;
 
 	public UserListWebServiceVo getUserList() {
+
 		List<UserVO> userVOs = serviceBeanLocal.getUserList();
 		UserListWebServiceVo rv = new UserListWebServiceVo();
 		rv.setList(new ArrayList<UserWebServiceVo>());
 		for (UserVO userVO : userVOs) {
 			rv.getList().add(mapper.map(userVO, UserWebServiceVo.class));
 		}
+
 		return rv;
 	}
 }
