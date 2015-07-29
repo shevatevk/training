@@ -13,12 +13,7 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
-		<dependency>
-			<groupId>hu.neuron.java</groupId>
-			<artifactId>core-client-api</artifactId>
-			<version>${version}</version>
-		</dependency>
-
+		
 		<!-- TEST -->
 		<dependency>
 			<groupId>junit</groupId>
