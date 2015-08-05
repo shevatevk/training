@@ -11,7 +11,7 @@
 		</servlet-class>
 		<init-param>
 			<param-name>WebLogicCluster</param-name>
-			<param-value>localhost:7005|localhost:7006</param-value>
+			<param-value>localhost:7003|localhost:7004</param-value>
 		</init-param>
 		<init-param>
 			<param-name>Debug</param-name>
