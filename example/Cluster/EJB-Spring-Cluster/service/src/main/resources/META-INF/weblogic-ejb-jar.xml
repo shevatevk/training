@@ -6,16 +6,12 @@
 	<!--weblogic-version:12.1.2 -->
 	<wls:weblogic-enterprise-bean>
 		<wls:ejb-name>AsyncProcessorBean</wls:ejb-name>
-        <wls:singleton-session-descriptor>
-            <wls:singleton-clustering>
-                <wls:use-serverside-stubs>true</wls:use-serverside-stubs>
-            </wls:singleton-clustering>
-        </wls:singleton-session-descriptor>
+       
         <wls:enable-call-by-reference>true</wls:enable-call-by-reference>
 	</wls:weblogic-enterprise-bean>
 	<wls:weblogic-enterprise-bean>
 		<wls:ejb-name>RoleConverter</wls:ejb-name>
-		<wls:singleton-session-descriptor></wls:singleton-session-descriptor>
+		
         <wls:enable-call-by-reference>true</wls:enable-call-by-reference>
 	</wls:weblogic-enterprise-bean>
 	<wls:weblogic-enterprise-bean>
@@ -25,12 +21,10 @@
 	</wls:weblogic-enterprise-bean>
 	<wls:weblogic-enterprise-bean>
 		<wls:ejb-name>TimerBean</wls:ejb-name>
-		<wls:singleton-session-descriptor></wls:singleton-session-descriptor>
         <wls:enable-call-by-reference>true</wls:enable-call-by-reference>
 	</wls:weblogic-enterprise-bean>
 	<wls:weblogic-enterprise-bean>
 		<wls:ejb-name>UserConverter</wls:ejb-name>
-		<wls:singleton-session-descriptor></wls:singleton-session-descriptor>
         <wls:enable-call-by-reference>true</wls:enable-call-by-reference>
 	</wls:weblogic-enterprise-bean>
 	<wls:weblogic-enterprise-bean>
